@@ -172,5 +172,5 @@ function store_user_input() {
 
 function beginTask() 
    {
-	document.location.href = 'stage1.html';
+	document.location.href = 'demo.html';
 	}

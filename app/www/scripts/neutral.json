@@ -1,0 +1,123 @@
+{
+    "intro":
+    [
+        "Meet your conversational virtual assistant, Zan. Zan is a conversational personal finance assistant who can help you with basic tasks, for example setting up a bank account. Using the information that you provide, Zan is able to compute the best recommendation just for you. Zan is designed by the Customer Experience and Tech team at RBT bank, who have 8 combined years of customer experience and 9 combined years of computer programming experience.",
+        "Today, you will go through a demonstration session where Zan will help you with three simple personal finance tasks:\n1. Choosing a bank savings account\n2. Choosing a home loan plan\n3. Choosing a life insurance policy"
+    ],
+    "qns":
+    [
+        "Please answer the following questions about your experience of choosing a bank savings account/home loan plan/life insurance policy with Zan."
+    ],
+    "common-scripts":
+    [
+        [
+            [
+                "How may I help you?", 
+                "You may request help with:"
+            ],
+            [
+                "Choosing a bank savings account", 
+                "Choosing a home loan plan", 
+                "Choosing a life insurance policy"
+            ]
+        ]
+    ],
+    "bank-savings":
+    [
+        [
+            ["To find a bank account that is best suited for you, I need to ask you several questions."],
+            []
+        ],
+        [
+            ["How old are you?"],
+            ["NUM"]
+        ],
+        [
+            ["What is your occupation?"],
+            ["CHAR"]
+        ],
+        [
+            ["What is your monthly income/allowance(SGD)?"],
+            ["NUM"]
+        ],
+        [
+            ["What is your estimated net worth(SGD)?"],
+            ["NUM"]
+        ],
+        [
+            ["What is your estimated monthly expenditure(SGD)?"],
+            ["NUM"]
+        ],
+        [
+            [
+                "Based on your information, this is my recommendation: Super Savers Account",
+                "The Super Savers Account helps you earn interest rates in the first S$100,000 balance in your account. There is no service fee, no minimum salary credit or credit card spend required. If your transactions with your Super Savers Account each month is below S$3,000, you get 0.05% interest p.a. If your transactions with your Super Savers Account each month is between S$3,000 and S$10,000, you get 1.50% interest p.a. If your transactions with your Super Savers Account each month is S$10,000 or more, you get 3.50% interest p.a.",
+                "This is the end of the task. Please click “Next” to answer several questions about your experience while finding an appropriate bank account.",
+                "Next"
+            ]
+        ]
+    ],
+    "life-insurance":
+    [
+        [
+            ["To find out the best life insurance plan for you, I would like to ask you several questions."],
+            []
+        ],
+        [
+            ["What is your age?"],
+            ["NUM"]
+        ],
+        [
+            ["Do you smoke?"],
+            ["Yes", "No"]
+        ],
+        [
+            ["Do you have any existing medical conditions?"],
+            ["Yes", "No"]
+        ],
+        [
+            ["Does your family have a history of cancer, cardiovascular conditions, or stroke?"],
+            ["Yes", "No"]
+        ],
+        [
+            [
+                "Based on your information, this is my recommendation: ProtectForLife insurance plan",
+                "With the ProtectForLife insurance plan, you only need to pay premiums for 15 years for a lifetime of protection. You will receive financial protection in the event of death, total and permanent disability or terminal illness.",
+                "The coverage increases progressively, with non-guaranteed bonuses added to the basic sum assured. You also have the option to include riders to receive coverage for critical illness and cash payouts. This is the end of the task. Please click “Next” to answer several questions about your experience while finding an appropriate life insurance policy."
+            ],
+            ["Next"]
+        ]
+    ],
+    "home-loan":
+    [
+        [
+            [
+                "To find a home loan plan that is best suited for you, I need to ask you several questions.",
+                "What kind of property are you looking for?"
+            ],
+            ["HDB", "Exec Condo", "Condo", "Landed"]
+        ],
+        [
+            ["How many rooms are you looking for?"],
+            ["2", "3", "4", "5", "More than 5"]
+        ],
+        [
+            ["How many properties do you own in Singapore?"],
+            ["NUM"]
+        ],
+        [
+            ["What is the combined income of the owners of this new home?"],
+            ["NUM"]
+        ],
+        [
+            [
+                "Based on your information, this is my recommendation: 25-year loan plan",
+                "With this loan, you pay monthly instalments with a 1.70% interest rate." ,
+                "The monthly instalment comprises the principal repayment and interest payment. You may use cash or CPF to pay your monthly instalments. Interest is charged daily, based on the principal loan amount that is outstanding.",
+                "This is the end of the task. Please click “Next” to answer several questions about your experience while finding an appropriate home loan plan.",
+            ]
+            ["Next"]
+        ]
+    ]
+
+}
