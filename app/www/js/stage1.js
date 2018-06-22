@@ -152,25 +152,47 @@ function get_attrs() {
     create_options(["I’m feeling good", "I’m doing okay"]));
 }
 
-function store_user_input() {
-    try {
-        $.post('/upload.php', {
-            'stage': 'orientation',
-            'id': user_id,
-            'name': $("#user_name").val(),
-            'gender': $('#user_gender').find(':selected').text(),
-            'marital_status': $('#marital_status').find(':selected').text(),
-            'child_num': $('#child_num').find(':selected').text(),
-            'annual_income': $('#annual_income').val(),
-            'expectation': $('#user_exp').val()
-        })
-    }
-    catch(err) {
-    }
 
-}
 
 function beginTask() 
    {
-	document.location.href = 'demo.html';
+	document.location.href = 'stage0.html';
 	}
+
+
+function selection1()
+{
+    var studyDiv = document.getElementById("selectStudy");
+    var uaDiv1 = document.getElementById("selectUA1");
+
+    studyDiv.style.display = "none";
+    uaDiv1.style.display = "block";
+
+}
+
+function selection2()
+{
+    var studyDiv = document.getElementById("selectStudy");
+    var uaDiv2 = document.getElementById("selectUA2");
+
+    studyDiv.style.display = "none";
+    uaDiv2.style.display = "block";
+
+}
+
+function goBack()
+{
+    var studyDiv = document.getElementById("selectStudy");
+    var uaDiv1 = document.getElementById("selectUA1");
+    var uaDiv2 = document.getElementById("selectUA2");
+
+    studyDiv.style.display = "block";
+    uaDiv1.style.display = "none";
+    uaDiv2.style.display = "none";
+
+}
+
+function goNext() {
+    document.location.href = './stage1.html';
+
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/intro.css">
+
+    <title>Select Study</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-light fixed-top">
+    <img src="../images/rbkbank-logo.png" width="140">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+
+
+    </div>
+</nav>
+
+<main class="container-fluid">
+
+    <div class="row page-content page-background justify-content-center">
+        <div class="col-sm-12 col-lg-8 col-md-10">
+            <div id="selectStudy" style="margin: 40px auto;">
+                <div  class="form-group"><center>
+                    <label><b>Please select study:</b></label> <p>
+
+                    <button type="button" class="btn button1" id="study1" onclick="selection1()">Study 1</button>
+
+                    <button type="button" class="btn button1" id="study2"  onclick="selection2()">Study 2</button><p>
+
+                </center></div>
+
+            </div>
+
+            <div id="selectUA1" style="margin: 40px auto; display: none;">
+                <div  class="form-group" ><center>
+                    <label><b>Please select the following</b></label> <p>
+                    <label>U:</label><select class="form-control col-3" >
+                    <option>1</option>
+                    <option>2</option>
+                </select> <p>
+                    <label>A:</label><select class="form-control col-3">
+                    <option>1</option>
+                    <option>2</option>
+
+                </select>
+                </center></div> <br>
+                <button  class="btn btn-default btn-left" onclick="goBack()">Back</button>
+                <button  class="btn btn-default btn-right" onclick="goNext()">Next</button>
+
+            </div>
+
+            <div id="selectUA2" style="margin: 40px auto; display: none;">
+                <div  class="form-group" ><center>
+                    <label><b>Please select the following</b></label> <p>
+                    <label>U:</label><select class="form-control col-3" >
+                    <option>1</option>
+                    <option>2</option>
+                </select> <p>
+                    <label>A:</label><select class="form-control col-3">
+                    <option>1</option>
+                    <option>2</option>
+
+                </select><p>
+
+                    <label>CS:</label><select class="form-control col-3">
+                    <option>1</option>
+                    <option>2</option>
+
+                </select>
+                </center></div> <br>
+                <button  class="btn btn-default btn-left" onclick="goBack()">Back</button>
+                <button  class="btn btn-default btn-right" onclick="goNext()">Next</button>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</main>
+
+<script src="../js/stage1.js"></script>
+</body>

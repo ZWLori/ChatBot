@@ -349,3 +349,22 @@ msg-row {
 
 	border: 1px solid #000;
 }
+
+/* Stage 0 buttons */
+
+.button1{
+    background-color: #3266a2;
+    color: #fff;
+    width: 180px;
+    height: 40px;
+    margin: 10px;
+}
+
+
+.btn-right {
+    float:right;
+}
+
+select {
+    background-colour: grey !important;
+}
