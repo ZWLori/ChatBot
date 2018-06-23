@@ -1,31 +1,11 @@
-// False: lab experiment; True: online version
-var online_version = false;
-var chosen_options = []
-var roboName = ""
-// Generate random user id, a 6-digit value
-var user_id = Math.floor(Math.random() * 900000) + 100000;
-sessionStorage.setItem('user_id', user_id);
-
-
-$(window).on('load', function () {
-    if (online_version) {
-        rand_int = Math.random() > 0.5 ? 1 : 0;
-        if (rand_int)
-            var convStyle = 'submissive';
-        else
-            var convStyle = 'dominant';
-    }
-
-})
 
 function get_attrs() {
-    roboName = document.getElementById("name").value;
-    gender = document.getElementById("gender");
-    gender = gender.options[gender.selectedIndex].value;
+    agent_gender = $("#agent-gender").val();
+    conv_script = $("#conv-script").val();
 
     // store the info
-    sessionStorage.setItem("roboName", roboName);
-    sessionStorage.setItem("roboGender", gender);
+    sessionStorage.setItem("agentGender", agent_gender);
+    sessionStorage.setItem("convScript", conv_script);
 
     if (!online_version) {
         convStyle = document.getElementById("convStyle");
@@ -60,5 +40,34 @@ function store_user_input() {
         document.location.href = './stage1.html';
     }
 
+
+}
+
+function selection1()
+{
+    $("#selectStudy").css("display", "none");
+    $("#selection-container").css("display", "block");
+    sessionStorage.setItem("study", 1);
+
+}
+
+function selection2()
+{
+    $("#selectStudy").css("display", "none");
+    $("#selection-container").css("display", "block");
+    $("#cs").css("display", "block");
+    sessionStorage.setItem("study", 2);
+
+}
+
+function goBack()
+{
+    $("#selectStudy").css("display","block");
+    $("#selection-container").css("display", "none");
+
+}
+
+function goNext() {
+    document.location.href = './stage1.html';
 
 }
