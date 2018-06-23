@@ -3,11 +3,68 @@ var online_version = false;
 var container = $("#chatContainer");
 var chosen_options = [];
 var roboName = "";
+var roboScriptLst = [];
+var responseOptsLst = [];
+var convRoundCount = 0;
 
-$(window).on('load', function(){
-    get_attrs();
+
+file = get_script_file();
+$.getJSON(file, function(data){
+    $.each(data["common-scripts"], function (infoIndex, info){
+        roboScriptLst.push(info[0]);
+        responseOptsLst.push(info[1]);
+    })
+    $.each(data["bank-savings"],function (infoIndex, info){
+        roboScriptLst.push(info[0]);
+        responseOptsLst.push(info[1]);
+    })
+    oneConvRound(convRoundCount);
 });
+    
 
+
+function get_script_file() {
+    script = sessionStorage.getItem("convScript");
+    console.log(script);
+    gender = sessionStorage.getItem("agentGender");
+    if (gender == "W")
+        $("#agent-image").attr("src", "../images/avatar/female.png");
+    else if (gender == "M")
+        $("#agent-image").attr("src", "../images/avatar/man_avatar.gif");
+    // change the avatar based on requirements
+    if (script == 'N'){
+        $(".user-description").prepend("<h3 style='margin-top: 20px;'>Zan</h3>");
+        file = "../scripts/neutral.json"
+    }
+    else if (script == 'W'){
+        $(".user-description").prepend("<h3 style='margin-top: 20px;'>Michelle</h3>");
+        file = "../scripts/neutral.json"
+    }
+    else if (script == "M"){
+        $(".user-description").prepend("<h3 style='margin-top: 20px;'>Michael</h3>");
+        file = "../scripts/neutral.json"
+    }
+    return file;
+}
+
+function oneConvRound(index){
+    if (convRoundCount >= roboScriptLst.length)
+        return
+    robo = roboScriptLst[index];
+    // create a box to holds the waiting dots
+    wait_box = create_chat_box("left", "");
+    // add the wait dots
+    create_wait_animation(wait_box.box);
+    // remove the wait dots after some time and then display all message
+    simulate_delay(wait_box).then(()=> {
+        for (i=0;i<robo.length;i++) {
+            box = create_chat_box("left", robo[i]);
+            add_text(box.box, box.text);
+        }
+        create_options(responseOptsLst[index]);
+        convRoundCount += 1;
+    });
+}
 
 //Create html chat box
 function create_chat_box(side, content) {
@@ -37,7 +94,6 @@ function add_text(box, text) {
     box.appendChild(text);
 }
 
-
 function create_wait_animation(box) {
     var wait_dots = document.createElement("div");
     wait_dots.className = "msg wait-dots";
@@ -53,12 +109,12 @@ function create_wait_animation(box) {
 
 
 function remove_wait_animation(box) {
-
     $(".wait-dots").remove();
 }
 
 //Create html element for options
 function create_options(content_list) {
+    $('html, body').animate({scrollTop:$(document).height()}, 'slow');
     html_str = "<div class='msg-row msg-right'>";
     for (c in content_list) {
         html_str += "<button class='btn btn-primary option' onclick=chose_opt(this)>" + content_list[c] + "</button>";
@@ -69,130 +125,38 @@ function create_options(content_list) {
 // Response after user chosing an option
 function chose_opt(ele) {
     if (ele.innerText == "I'm ready to proceed!") {
-      //  document.location.href = 'stage2.html';
+        document.location.href = 'stage2.html';
         // store the chosen options
         return
     }
     $("#options").remove();
+    $('html, body').animate({scrollTop:$(document).height()}, 'slow');
     chosen_options.push(ele.innerText);
     right_chat_box= create_chat_box("right", ele.innerText);
     add_text(right_chat_box.box, right_chat_box.text);
 
-    res = robo_response(ele.innerText);
-    left_chat_box= create_chat_box("left", res);
-    create_wait_animation(left_chat_box.box);
-    simulate_delay(left_chat_box).then(()=>
-        user_options(res));
+    oneConvRound(convRoundCount);
+
 }
 
 async function simulate_delay(box) {
     await timeout(1000);
    remove_wait_animation(box.box);
-   add_text(box.box, box.text);
+   // add_text(box.box, box.text);
 }
 
 function timeout (ms) {
     return new Promise(res => setTimeout(res,ms));
 }
 
-// Logic flow
-function robo_response(ans) {
-    // ans = ans.toLowerCase()
-    console.log(ans);
-    switch (ans) {
-        case "I’m feeling good":
-        case "I’m doing okay":
-            res = "May I get to know a little more about you?";
-            break;
-        case "Finish":
-            res = "Thank you very much! Now I’ll work out a wealth management plan for you!"
-            store_user_input();
-            break;
-        default:
-            res = "Finish?";
-            break;
+function store_user_input() {
+    try {
+        $.post('/upload.php', {
+            
+        })
     }
-    return res;
-}
-
-function user_options(res) {
-    // res = res.toLowerCase();
-    switch (res) {
-        case "May I get to know a little more about you?":
-            html_text = "My name is <input id='user_name' type='text'>, ";
-            html_text += "I’m <select id='user_gender'><option value='male'>male</option><option value='female'>female</option></select>.";
-            html_text += "I’m <select id='marital_status'><option value='married'>married</option><option value='single'>single</option></select>, "
-            html_text += "and have <select id='child_num'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='more'>More</option></select> children. ";
-            html_text += "My annual income is about <input id='annual_income' type='text'>, ";
-            html_text += "and my expectation for you is <input id='user_exp' type='text'> (annualized return: 5, 10, 15%)."
-            box=create_chat_box("right", html_text);
-            add_text(box.box, box.text);
-            create_options(["Finish"]);
-            break;
-        default:
-            opt = ["I'm ready to proceed!"];
-            create_options(opt);
-            break;
+    catch(err) {
     }
-    return;
-}
-
-function get_attrs() {
-
-    var convStyle = sessionStorage.getItem("convStyle");
-    // change the avatar based on requirements
-    if (convStyle == 'dominant')
-        $("#robo-image").attr("src", "images/avatar/(YH)RoboAdvisor_dominant.gif");
-    else if (convStyle == 'submissive')
-        $("#robo-image").attr("src", "images/avatar/(YH)RoboAdvisor_submissive.gif");
-
-    response_box = create_chat_box("left", "Hi, my name is " + roboName + " and I help people manage their portfolio. How are you doing today?");
-    create_wait_animation(response_box.box);
-    simulate_delay(response_box).then(()=>
-    create_options(["I’m feeling good", "I’m doing okay"]));
-}
-
-
-
-function beginTask() 
-   {
-	document.location.href = 'stage0.html';
-	}
-
-
-function selection1()
-{
-    var studyDiv = document.getElementById("selectStudy");
-    var uaDiv1 = document.getElementById("selectUA1");
-
-    studyDiv.style.display = "none";
-    uaDiv1.style.display = "block";
 
 }
 
-function selection2()
-{
-    var studyDiv = document.getElementById("selectStudy");
-    var uaDiv2 = document.getElementById("selectUA2");
-
-    studyDiv.style.display = "none";
-    uaDiv2.style.display = "block";
-
-}
-
-function goBack()
-{
-    var studyDiv = document.getElementById("selectStudy");
-    var uaDiv1 = document.getElementById("selectUA1");
-    var uaDiv2 = document.getElementById("selectUA2");
-
-    studyDiv.style.display = "block";
-    uaDiv1.style.display = "none";
-    uaDiv2.style.display = "none";
-
-}
-
-function goNext() {
-    document.location.href = './stage1.html';
-
-}
