@@ -43,7 +43,6 @@ function selection1()
 {
     $("#selectStudy").css("display", "none");
     $("#selection-container").css("display", "block");
-    $("#cs").css("display", "block");
     sessionStorage.setItem("study", 1);
 
 }
@@ -52,7 +51,7 @@ function selection2()
 {
     $("#selectStudy").css("display", "none");
     $("#selection-container").css("display", "block");
-    
+    $("#cs").css("display", "block");
     sessionStorage.setItem("study", 2);
 
 }
