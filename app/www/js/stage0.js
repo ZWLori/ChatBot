@@ -1,20 +1,16 @@
 
 function get_attrs() {
     agent_gender = $("#agent-gender").val();
-    conv_script = $("#conv-script").val();
+    if (sessionStorage.getItem("study") == 1)
+        conv_script = $("#conv-script").val();
+    else
+        conv_script = "N";
+    console.log(agent_gender);
+    console.log(conv_script);
 
     // store the info
     sessionStorage.setItem("agentGender", agent_gender);
     sessionStorage.setItem("convScript", conv_script);
-
-    if (!online_version) {
-        convStyle = document.getElementById("convStyle");
-        convStyle = convStyle.options[convStyle.selectedIndex].value;
-        sessionStorage.setItem("convStyle", convStyle);
-    }
-    else{
-        sessionStorage.setItem("convStyle", convStyle);
-    }
 
     store_user_input();
 }
@@ -47,6 +43,7 @@ function selection1()
 {
     $("#selectStudy").css("display", "none");
     $("#selection-container").css("display", "block");
+    $("#cs").css("display", "block");
     sessionStorage.setItem("study", 1);
 
 }
@@ -55,7 +52,7 @@ function selection2()
 {
     $("#selectStudy").css("display", "none");
     $("#selection-container").css("display", "block");
-    $("#cs").css("display", "block");
+    
     sessionStorage.setItem("study", 2);
 
 }
@@ -68,6 +65,6 @@ function goBack()
 }
 
 function goNext() {
+    get_attrs()
     document.location.href = './stage1.html';
-
 }
