@@ -30,7 +30,7 @@ function get_script_file() {
     if (gender == "W")
         $("#agent-image").attr("src", "../images/avatar/female.png");
     else if (gender == "M")
-        $("#agent-image").attr("src", "../images/avatar/man_avatar.gif");
+        $("#agent-image").attr("src", "../images/avatar/male.png");
     // change the avatar based on requirements
     if (script == 'N'){
         $(".user-description").prepend("<h3 style='margin-top: 20px;'>Zan</h3>");
