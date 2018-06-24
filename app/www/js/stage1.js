@@ -129,13 +129,28 @@ function chose_opt(ele) {
         // store the chosen options
         return
     }
-    $("#options").remove();
-    $('html, body').animate({scrollTop:$(document).height()}, 'slow');
-    chosen_options.push(ele.innerText);
-    right_chat_box= create_chat_box("right", ele.innerText);
-    add_text(right_chat_box.box, right_chat_box.text);
+    if (ele.innerHTML.includes("input")) {
+        $(ele.children[1]).on("click",function(){
+            
+            $("#options").remove();  //TODO: doesnt work
+            $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+            chosen_options.push($(ele.children[0]).val());
+            console.log($(ele.children[0]).val());
+            right_chat_box= create_chat_box("right", $(ele.children[0]).val());
+            add_text(right_chat_box.box, right_chat_box.text);
 
-    oneConvRound(convRoundCount);
+            oneConvRound(convRoundCount);
+        });
+    }
+    else {
+        $("#options").remove();  //TODO: doesnt work
+        $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+        chosen_options.push(ele.innerText);
+        right_chat_box= create_chat_box("right", ele.innerText);
+        add_text(right_chat_box.box, right_chat_box.text);
+
+        oneConvRound(convRoundCount);
+    }
 
 }
 

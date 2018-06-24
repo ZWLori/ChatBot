@@ -20,23 +20,23 @@
                 "To find a bank account that is best suited for you, I need to ask you several questions.",
                 "How old are you?"
             ],
-            ["NUM"]
+            ["<input type='number' name='age' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
             ["What is your occupation?"],
-            ["CHAR"]
+            ["<input type='text' name='occupation' placeholder='Enter string' pattern='[A-Za-z]'><input type='submit' value='ok'>"]
         ],
         [
             ["What is your monthly income/allowance(SGD)?"],
-            ["NUM"]
+            ["<input type='number' name='income' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
             ["What is your estimated net worth(SGD)?"],
-            ["NUM"]
+            ["<input type='number' name='net-worth' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
             ["What is your estimated monthly expenditure(SGD)?"],
-            ["NUM"]
+            ["<input type='number' name='expenditure' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
             [
