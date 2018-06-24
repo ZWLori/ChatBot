@@ -8,24 +8,21 @@ var responseOptsLst = [];
 var convRoundCount = 0;
 
 
-file = get_script_file();
+$.ajaxSetup({
+    async: false
+});
+
+var file = get_script_file();
 $.getJSON(file, function(data){
     $.each(data["common-scripts"], function (infoIndex, info){
-        roboScriptLst.push(info[0]);
-        responseOptsLst.push(info[1]);
-    })
-    $.each(data["bank-savings"],function (infoIndex, info){
         roboScriptLst.push(info[0]);
         responseOptsLst.push(info[1]);
     })
     oneConvRound(convRoundCount);
 });
     
-
-
 function get_script_file() {
     script = sessionStorage.getItem("convScript");
-    console.log(script);
     gender = sessionStorage.getItem("agentGender");
     if (gender == "W")
         $("#agent-image").attr("src", "../images/avatar/female.png");
@@ -129,13 +126,32 @@ function chose_opt(ele) {
         // store the chosen options
         return
     }
+    if (ele.innerHTML.includes("bank savings")){
+        $.getJSON(file, function(data){
+            selectChoice = data["bank-savings"];
+        })
+    }
+    else if (ele.innerHTML.includes("life insurance")){
+        $.getJSON(file, function(data){
+            selectChoice = data["life-insurance"]
+        })
+    }
+    else if (ele.innerHTML.includes("home loan")){
+        $.getJSON(file, function(data){
+            selectChoice = data["home-loan"]
+        })
+    } 
+    $.each(selectChoice,function (infoIndex, info){
+        roboScriptLst.push(info[0]);
+        responseOptsLst.push(info[1]);
+    })
+    
     if (ele.innerHTML.includes("input")) {
+        $(ele).attr("disabled", "disabled");
         $(ele.children[1]).on("click",function(){
-            
             $("#options").remove();  //TODO: doesnt work
             $('html, body').animate({scrollTop:$(document).height()}, 'slow');
             chosen_options.push($(ele.children[0]).val());
-            console.log($(ele.children[0]).val());
             right_chat_box= create_chat_box("right", $(ele.children[0]).val());
             add_text(right_chat_box.box, right_chat_box.text);
 

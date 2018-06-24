@@ -24,38 +24,37 @@
         ],
         [
             ["What is your occupation?"],
-            ["<input type='text' name='occupation' placeholder='Enter string' pattern='[A-Za-z]'><input type='submit' value='ok'>"]
+            ["<input type='text' name='occupation' pattern='[A-Za-z]'><input type='submit' value='ok'>"]
         ],
         [
-            ["What is your monthly income/allowance(SGD)?"],
+            ["What is your monthly income/allowance (SGD)?"],
             ["<input type='number' name='income' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
-            ["What is your estimated net worth(SGD)?"],
+            ["What is your estimated net worth (SGD)?"],
             ["<input type='number' name='net-worth' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
-            ["What is your estimated monthly expenditure(SGD)?"],
+            ["What is your estimated monthly expenditure (SGD)?"],
             ["<input type='number' name='expenditure' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
             [
                 "Based on your information, this is my recommendation: Super Savers Account",
                 "The Super Savers Account helps you earn interest rates in the first S$100,000 balance in your account. There is no service fee, no minimum salary credit or credit card spend required. If your transactions with your Super Savers Account each month is below S$3,000, you get 0.05% interest p.a. If your transactions with your Super Savers Account each month is between S$3,000 and S$10,000, you get 1.50% interest p.a. If your transactions with your Super Savers Account each month is S$10,000 or more, you get 3.50% interest p.a.",
-                "This is the end of the task. Please click “Next” to answer several questions about your experience while finding an appropriate bank account.",
-                "Next"
-            ]
+                "This is the end of the task. Please click “Next” to answer several questions about your experience while finding an appropriate bank account."
+            ],
+            ["Next"]
         ]
     ],
     "life-insurance":
     [
         [
-            ["To find out the best life insurance plan for you, I would like to ask you several questions."],
-            []
-        ],
-        [
-            ["What is your age?"],
-            ["NUM"]
+            [
+                "To find out the best life insurance plan for you, I would like to ask you several questions.",
+                "What is your age?"
+            ],
+            ["<input type='number' name='expenditure' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
             ["Do you smoke?"],
@@ -93,11 +92,11 @@
         ],
         [
             ["How many properties do you own in Singapore?"],
-            ["NUM"]
+            ["<input type='number' name='expenditure' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
             ["What is the combined income of the owners of this new home?"],
-            ["NUM"]
+            ["<input type='number' name='expenditure' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
             [
