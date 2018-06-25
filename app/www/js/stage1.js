@@ -15,7 +15,7 @@ $.ajaxSetup({
 var file = get_script_file();
 var commonScripts;
 $.getJSON(file, function(data){
-    commonScripts = data["common-scripts"]
+    commonScripts = data["scripts"]
     $.each(commonScripts, function (infoIndex, info){
         roboScriptLst.push(info[0]);
         responseOptsLst.push(info[1]);
@@ -37,11 +37,11 @@ function get_script_file() {
     }
     else if (script == 'W'){
         $(".user-description").prepend("<h3 style='margin-top: 20px;'>Michelle</h3>");
-        file = "../scripts/neutral.json"
+        file = "../scripts/woman.json"
     }
     else if (script == "M"){
         $(".user-description").prepend("<h3 style='margin-top: 20px;'>Michael</h3>");
-        file = "../scripts/neutral.json"
+        file = "../scripts/man.json"
     }
     return file;
 }
@@ -128,37 +128,40 @@ function chose_opt(ele) {
         // store the chosen options
         return;
     }
-    if (ele.innerHTML == "Next") {
-        roboScriptLst.length = 0;
-        responseOptsLst.length = 0;
-        console.log(commonScripts);
-        $.each(commonScripts, function (infoIndex, info){
-            roboScriptLst.push(info[0]);
-            responseOptsLst.push(info[1]);
-        })
-        convRoundCount = 0;
-    }
-    else {
-        if (ele.innerHTML.includes("bank savings")){
-            $.getJSON(file, function(data){
-                selectChoice = data["bank-savings"];
+    if (file.includes("neutral")) {
+        if (ele.innerHTML == "Next") {
+            roboScriptLst.length = 0;
+            responseOptsLst.length = 0;
+            console.log(commonScripts);
+            $.each(commonScripts, function (infoIndex, info){
+                roboScriptLst.push(info[0]);
+                responseOptsLst.push(info[1]);
+            })
+            convRoundCount = 0;
+        }
+        else {
+            if (ele.innerHTML.includes("bank savings")){
+                $.getJSON(file, function(data){
+                    selectChoice = data["bank-savings"];
+                })
+            }
+            else if (ele.innerHTML.includes("life insurance")){
+                $.getJSON(file, function(data){
+                    selectChoice = data["life-insurance"]
+                })
+            }
+            else if (ele.innerHTML.includes("home loan")){
+                $.getJSON(file, function(data){
+                    selectChoice = data["home-loan"]
+                })
+            } 
+            $.each(selectChoice,function (infoIndex, info){
+                roboScriptLst.push(info[0]);
+                responseOptsLst.push(info[1]);
             })
         }
-        else if (ele.innerHTML.includes("life insurance")){
-            $.getJSON(file, function(data){
-                selectChoice = data["life-insurance"]
-            })
-        }
-        else if (ele.innerHTML.includes("home loan")){
-            $.getJSON(file, function(data){
-                selectChoice = data["home-loan"]
-            })
-        } 
-        $.each(selectChoice,function (infoIndex, info){
-            roboScriptLst.push(info[0]);
-            responseOptsLst.push(info[1]);
-        })
     }
+   
     
     if (ele.innerHTML.includes("input")) {
         $(ele).attr("disabled", "disabled");

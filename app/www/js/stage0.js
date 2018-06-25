@@ -1,7 +1,8 @@
 
 function get_attrs() {
     agent_gender = $("#agent-gender").val();
-    if (sessionStorage.getItem("study") == 1)
+    console.log(sessionStorage.getItem("study"));
+    if (sessionStorage.getItem("study") == 2)
         conv_script = $("#conv-script").val();
     else
         conv_script = "N";

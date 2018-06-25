@@ -1,0 +1,132 @@
+{
+    "scripts":
+    [
+        [
+            [
+                "Hello. Thank you for using RBT Bank. I’m Michael, your capable and brilliant personal finance assistant. I’m sure I’ll be able to take care of your personal finance-related needs. Let’s get down to business.",
+                "Today, I want to show you what I can do. I will help you with several tasks. First, I will help you choose a bank savings account."
+            ],
+            [
+                "Sure, I have been looking to set up a suitable savings account for myself",
+                "Yes, even though I am not looking for a savings account, I’d love to see what you can do"
+            ]
+        ],
+        [
+            [
+                "Then let’s get to it.",
+                "A bank savings account allows you to earn while you save. Our interest rates are one of the most competitive and we have a credit rating of AA. We will ensure that your savings are safe with us.",
+                "ABC Bank has several kinds of banking accounts to suit different people with different needs. My job here is to find the perfect option for you.",
+                "But first, I will conduct a short interview with you to find out more about your needs and goals."
+            ],
+            ["Of course", "Sure, go ahead"]
+        ],
+        [
+            ["How old are you?"],
+            ["<input type='number' name='age' placeholder='Enter number'><input type='submit' value='ok'>"]
+        ],
+        [
+            ["What is your occupation?"],
+            ["<input type='text' name='occupation' pattern='[A-Za-z]'><input type='submit' value='ok'>"]
+        ],
+        [
+            ["What is your monthly income/allowance (SGD)?"],
+            ["<input type='number' name='income' placeholder='Enter number'><input type='submit' value='ok'>"]
+        ],
+        [
+            ["What is your estimated net worth (SGD)?"],
+            ["<input type='number' name='net-worth' placeholder='Enter number'><input type='submit' value='ok'>"]
+        ],
+        [
+            ["What is your estimated monthly expenditure (SGD)?"],
+            ["<input type='number' name='expenditure' placeholder='Enter number'><input type='submit' value='ok'>"]
+        ],
+        [
+            [
+                "Thanks for the information. According to your profile, the Super Savers Account is great for you.",
+                "The Super Savers Account gives interest rates for the first S$100,000 balance in the account. There is no service fee, no minimum salary credit or credit card spend required.",
+                "A total transaction amount of below S$3,000 with the Super Savers Account will get you 0.05% interest p.a. Transactions between S$3,000 and S$10,000, will get you 1.50% interest p.a. Transactions above S$10,000, will get you 3.50% interest p.a.",
+                "Now that I’ve found a plan for you, please click 'Next' to answer several questions about your experience while finding an appropriate bank account."
+            ],
+            ["Next"]
+        ],
+        [
+            ["Thanks for completing the survey. On to the next task: finding a suitable home loan plan."],
+            [
+                "Great! I would love to find out more about home loan plans",
+                "Sure! I am interested to see what home loan plan is good for me."
+            ]
+        ],
+        [
+            [
+                "Let’s begin.",
+                "A home loan is a loan granted for the purchase of a property. It is otherwise known as a mortgage, as the property in question is pledged to the bank as collateral.",
+                "Buying a home is a big decision, but I will find the best home loan plan for you. First, I will have to ask you several questions to better understand your needs."
+            ],
+            ["Go Ahead", "Sure"]
+        ],
+        [
+            ["What kind of property are you looking for?"],
+            ["HDB", "Exec Condo", "Condo", "Landed"]
+        ],
+        [
+            ["How many rooms are you looking for?"],
+            ["2", "3", "4", "5", "More than 5"]
+        ],
+        [
+            ["How many properties do you own in Singapore?"],
+            ["<input type='number' name='expenditure' placeholder='Enter number'><input type='submit' value='ok'>"]
+        ],
+        [
+            ["What is the combined income of the owners of this new home?"],
+            ["<input type='number' name='expenditure' placeholder='Enter number'><input type='submit' value='ok'>"]
+        ],
+        [
+            [
+                "Thanks for the information. According to your preferences and profile, the 25-year loan plan is great for you.",
+                "With this loan, you pay monthly instalments with a 1.70% interest rate. The monthly instalment comprises the principal repayment and interest payment. The monthly instalments can be paid using cash or CPF. Interest is charged daily, based on the principal loan amount that is outstanding.",
+                "Now that I’ve found a plan for you, please click 'Next' to answer several questions about your experience while finding an appropriate home loan plan."
+            ],
+            ["Next"]
+        ],
+        [
+            ["Thanks for completing the survey. Let’s move on to the next task: finding a suitable life insurance policy."],
+            [
+                "Yes, please find a suitable life insurance policy for me",
+                "Sure, I would like to find out more about life insurance policies"
+            ]
+        ],
+        [
+            [
+                "Let’s start.",
+                "A life insurance policy pays out an agreed amount known as the sum assured under certain circumstances. This will be paid to you if you are permanently disabled or critically ill, or paid to your estate if you are no longer around. This money is intended to help you meet your financial needs and / or those of your dependents if these events happen. Life insurance provides financial protection or coverage against these risks.",
+                "In return for this protection or coverage, you pay a premium for an agreed period of time, depending on the type of policy you purchase.",
+                "Clients’ well-being is an important part of RBT Bank’s mission. A good life insurance plan is crucial to protect yourself against any unexpected unfortunate events. To find out the best life insurance plan for you, I will ask you several questions to better understand your profile."
+            ],
+            ["Okay", "Sure"]
+        ],
+        [
+            ["What is your age?"],
+            ["<input type='number' name='expenditure' placeholder='Enter number'><input type='submit' value='ok'>"]
+        ],
+        [
+            ["Do you smoke?"],
+            ["Yes", "No"]
+        ],
+        [
+            ["Do you have any existing medical conditions?"],
+            ["Yes", "No"]
+        ],
+        [
+            ["Does your family have a history of cancer, cardiovascular conditions, or stroke?"],
+            ["Yes", "No"]
+        ],
+        [
+            [
+                "Thanks for the information. According your profile, the ProtectForLife insurance plan is suitable for you.",
+                "With the ProtectForLife insurance plan, you only need to pay premiums for 15 years for a lifetime of protection. You will receive financial protection in the event of death, total and permanent disability or terminal illness. The coverage increases progressively, with non-guaranteed bonuses added to the basic sum assured. You also have the option to include riders to receive coverage for critical illness and cash payouts.",
+                "Now that I’ve found a plan for you, please click 'Next' to answer several questions about your experience while finding an appropriate life insurance plan."
+            ],
+            ["Next"]
+        ]
+    ]
+}
