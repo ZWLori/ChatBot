@@ -66,18 +66,18 @@
         ],
         [
             ["What kind of property are you looking for?"],
-            ["HDB", "Exec Condo", "Condo", "Landed"]
+            ["Landed", "Condo", "Exec Condo", "HDB"]
         ],
         [
             ["How many rooms are you looking for?"],
-            ["2", "3", "4", "5", "More than 5"]
+            ["More than 5", "2", "3", "4", "5",]
         ],
         [
             ["How many properties do you own in Singapore?"],
             ["<input type='number' name='expenditure' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
-            ["What is the combined income of the owners of this new home?"],
+            ["What is the combined annual income of the owners of this new propoerty that you are thinking of buying?"],
             ["<input type='number' name='expenditure' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
