@@ -3,7 +3,7 @@
     [
         [
             [
-                "Hi there! Thank you for using RBT Bank. My name is Michelle and I am your helpful and supportive personal finance assistant. I hope you’re doing good today and I hope I would be able to meet all your personal finance-related needs!", 
+                "Hi there! :-) Thank you for using RBT Bank. My name is Michelle and I am your helpful and supportive personal finance assistant. :-) I hope you’re doing good today and I hope I would be able to meet all your personal finance-related needs!", 
                 "May I show you what I can do? I would like to help you with several tasks today. First, shall I help you choose a bank savings account?"
             ],
             [
@@ -13,9 +13,9 @@
         ],
         [
             [
-                "Wonderful!",
-                "A bank savings account allows you to earn while you save! Our interest rates are one of the most competitive and we have a credit rating of AA. So don’t worry, you can surely trust your savings with us!",
-                "ABC Bank has several kinds of banking accounts to suit different people with different needs. I know it can get confusing with so many options to choose from, that’s why I’m here to help!",
+                "Wonderful! :-)",
+                "A bank savings account allows you to earn while you save! Our interest rates are one of the most competitive and we have a credit rating of AA. So don’t worry, you can surely trust your savings with us! :-)",
+                "ABC Bank has several kinds of banking accounts to suit different people with different needs. I know it can get confusing with so many options to choose from, that’s why I’m here to help! :-)",
                 "May I conduct a short interview with you to find out more about your needs and goals?"
             ],
             ["Of course", "Sure, go ahead"]   
@@ -42,7 +42,7 @@
         ],
         [
             [
-                "Awesome! Thank you for your information. Looking at your profile, I think our Super Savers Account is great for you!",
+                "Awesome! :-) Thank you for your information. Looking at your profile, I think our Super Savers Account is great for you!",
                 "The Super Savers Account helps you earn interest rates in the first S$100,000 balance in your account. There is no service fee, no minimum salary credit or credit card spend required!",
                 "If your transactions with your Super Savers Account each month is below S$3,000, you get 0.05% interest p.a. If your transactions with your Super Savers Account each month is between S$3,000 and S$10,000, you get 1.50% interest p.a. If your transactions with your Super Savers Account each month is S$10,000 or more, you get 3.50% interest p.a.",
                 "Now that I’ve found a plan for you, could you please click 'Next' to answer several questions about your experience while finding an appropriate bank account?"
@@ -51,11 +51,11 @@
         ],
         [
             ["Great, thanks for completing the survey! ☺ Now, let me move on to our next task. Shall I help you find a suitable home loan plan?"],
-            [" Sure! I am interested to see what home loan plan is good for me."]
+            ["Sure! I am interested to see what home loan plan is good for me."]
         ],
         [
             [
-                "I'm happy to help!",
+                "I'm happy to help! ☺",
                 "A home loan is a loan granted for the purchase of a property. It is otherwise known as a mortgage, as the property in question is pledged to the bank as collateral.",
                 "I know that buying a home is a big decision. That’s why I’m here to help you find the best home loan plan for you! May I ask you several questions to better understand your needs?"
             ],
@@ -63,35 +63,35 @@
         ],
         [
             ["What kind of property are you looking for?"],
-            ["HDB", "Exec Condo", "Condo", "Landed"]
+            ["Landed", "Condo", "Exec Condo", "HDB"]
         ],
         [
             ["How many rooms are you looking for?"],
-            ["2", "3", "4", "5", "More than 5"]
+            ["More than 5", "5", "4", "3", "2"]
         ],
         [
             ["How many properties do you own in Singapore?"],
             ["<input type='number' name='expenditure' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
-            ["What is the combined income of the owners of this new home?"],
+            ["What is the combined monthly income of the owners of this new property that you are thinking of buying?"],
             ["<input type='number' name='expenditure' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
             [
-                "Awesome! Thanks for your information. Looking at your preferences and profile, I think our 25-year loan plan is great for you!",
+                "Awesome! Thanks for your information. ☺ Looking at your preferences and profile, I think our 25-year loan plan is great for you!",
                 "With this loan, you pay monthly instalments with a 1.70% interest rate. Your monthly instalment comprises your principal repayment and interest payment. You may use cash or CPF to pay your monthly instalments. Your interest is charged daily, based on the principal loan amount that is outstanding.",
                 "Now that I’ve found a plan for you, could you please click 'Next' to answer several questions about your experience while finding an appropriate home loan plan?"
             ],
             ["Next"]
         ],
         [
-            ["Great! Thanks for completing the survey! Now, let me move on to our next task. Shall I help you to find a suitable life insurance policy?"],
+            ["Great! ☺ Thanks for completing the survey! Now, let me move on to our next task. Shall I help you to find a suitable life insurance policy?"],
             ["Yes, please find a suitable life insurance policy for me", "Sure, I would like to find out more about life insurance policies"]
         ],
         [
             [
-                "Lovely!",
+                "Lovely! ☺",
                 "A life insurance policy pays out an agreed amount known as the sum assured under certain circumstances. This will be paid to you if you are permanently disabled or critically ill, or paid to your estate if you are no longer around. This money is intended to help you meet your financial needs and / or those of your dependents if these events happen. Life insurance provides financial protection or coverage against these risks.",
                 "In return for this protection or coverage, you pay a premium for an agreed period of time, depending on the type of policy you purchase.",
                 "Here at RBT Bank, we care for your well-being, and we want you to be well-protected against any unexpected unfortunate incidents. It’s important that I help you find the best life insurance plan for you. May I ask you several questions to better understand your profile?"
@@ -116,7 +116,7 @@
         ],
         [
             [
-                "Cool! Thanks for your information. Looking at your profile, I think our ProtectForLife insurance plan is suitable for you!",
+                "Cool! ☺ Thanks for your information. Looking at your profile, I think our ProtectForLife insurance plan is suitable for you!",
                 "With the ProtectForLife insurance plan, you only need to pay premiums for 15 years for a lifetime of protection. You will receive financial protection in the event of death, total and permanent disability or terminal illness. The coverage increases progressively, with non-guaranteed bonuses added to the basic sum assured. You also have the option to include riders to receive coverage for critical illness and cash payouts.", 
                 "Now that I’ve found a plan for you, could you please click 'Next' to answer several questions about your experience while finding an appropriate life insurance plan."
             ],

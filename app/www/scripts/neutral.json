@@ -18,7 +18,7 @@
         [
             [
                 "To find a bank account that is best suited for you, I need to ask you several questions.",
-                "How old are you?"
+                "First, how old are you?"
             ],
             ["<input type='number' name='age' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
@@ -52,7 +52,7 @@
         [
             [
                 "To find out the best life insurance plan for you, I would like to ask you several questions.",
-                "What is your age?"
+                "First, what is your age?"
             ],
             ["<input type='number' name='expenditure' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
@@ -71,8 +71,8 @@
         [
             [
                 "Based on your information, this is my recommendation: ProtectForLife insurance plan",
-                "With the ProtectForLife insurance plan, you only need to pay premiums for 15 years for a lifetime of protection. You will receive financial protection in the event of death, total and permanent disability or terminal illness.",
-                "The coverage increases progressively, with non-guaranteed bonuses added to the basic sum assured. You also have the option to include riders to receive coverage for critical illness and cash payouts. This is the end of the task. Please click “Next” to answer several questions about your experience while finding an appropriate life insurance policy."
+                "With the ProtectForLife insurance plan, you only need to pay premiums for 15 years for a lifetime of protection. You will receive financial protection in the event of death, total and permanent disability or terminal illness. The coverage increases progressively, with non-guaranteed bonuses added to the basic sum assured. You also have the option to include riders to receive coverage for critical illness and cash payouts.",
+                "This is the end of the task. Please click “Next” to answer several questions about your experience while finding an appropriate life insurance policy."
             ],
             ["Next"]
         ]
@@ -82,20 +82,20 @@
         [
             [
                 "To find a home loan plan that is best suited for you, I need to ask you several questions.",
-                "What kind of property are you looking for?"
+                "First, what kind of property are you looking for?"
             ],
-            ["HDB", "Exec Condo", "Condo", "Landed"]
+            ["Landed", "Condo", "Exec Condo", "HDB"]
         ],
         [
             ["How many rooms are you looking for?"],
-            ["2", "3", "4", "5", "More than 5"]
+            ["More than 5", "5", "4", "3", "2"]
         ],
         [
             ["How many properties do you own in Singapore?"],
             ["<input type='number' name='expenditure' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
-            ["What is the combined income of the owners of this new home?"],
+            ["What is the combined monthly income of the owners of this new property that you are thinking of buying?"],
             ["<input type='number' name='expenditure' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [

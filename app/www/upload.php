@@ -13,7 +13,7 @@ foreach($_POST as $key => $value) {
 }
 
 $stage = $_POST['stage'];
-$bucket = 'user_input';
+$bucket = 'chatbot-208206.appspot.com';
 
 // Upload data to google cloud storage, under bucket ${bucket}
 if (file_exists("gs://${bucket}/${stage}.csv")) {

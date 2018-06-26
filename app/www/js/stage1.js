@@ -2,10 +2,10 @@
 var online_version = false;
 var container = $("#chatContainer");
 var chosen_options = [];
-var roboName = "";
 var roboScriptLst = [];
 var responseOptsLst = [];
 var convRoundCount = 0;
+var userResponses = {};
 
 
 $.ajaxSetup({
@@ -16,6 +16,7 @@ var file = get_script_file();
 var commonScripts;
 $.getJSON(file, function(data){
     commonScripts = data["scripts"]
+    console.log(commonScripts[0][1])
     $.each(commonScripts, function (infoIndex, info){
         roboScriptLst.push(info[0]);
         responseOptsLst.push(info[1]);
@@ -130,27 +131,41 @@ function chose_opt(ele) {
     }
     if (file.includes("neutral")) {
         if (ele.innerHTML == "Next") {
-            roboScriptLst.length = 0;
-            responseOptsLst.length = 0;
-            console.log(commonScripts);
-            $.each(commonScripts, function (infoIndex, info){
-                roboScriptLst.push(info[0]);
-                responseOptsLst.push(info[1]);
-            })
-            convRoundCount = 0;
+            if (Object.keys(userResponses).length < 3){
+                roboScriptLst.length = 0;
+                responseOptsLst.length = 0;
+                console.log(commonScripts);
+                $.each(commonScripts, function (infoIndex, info){
+                    roboScriptLst.push(info[0]);
+                    responseOptsLst.push(info[1]);
+                })
+                convRoundCount = 0;
+            }
         }
         else {
             if (ele.innerHTML.includes("bank savings")){
+                userResponses["bank-savings"] = [];
+                index = commonScripts[0][1].indexOf(ele.innerText);
+                commonScripts[0][1].splice(index,1);
+                console.log(commonScripts);
                 $.getJSON(file, function(data){
                     selectChoice = data["bank-savings"];
                 })
             }
             else if (ele.innerHTML.includes("life insurance")){
+                userResponses["life-insurance"] = [];
+                index = commonScripts[0][1].indexOf(ele.innerText);
+                commonScripts[0][1].splice(index,1);
+                console.log(commonScripts);
                 $.getJSON(file, function(data){
                     selectChoice = data["life-insurance"]
                 })
             }
             else if (ele.innerHTML.includes("home loan")){
+                userResponses["home-loan"] = []
+                index = commonScripts[0][1].indexOf(ele.innerText);
+                commonScripts[0][1].splice(index,1);
+                console.log(commonScripts);
                 $.getJSON(file, function(data){
                     selectChoice = data["home-loan"]
                 })
@@ -211,10 +226,14 @@ function timeout (ms) {
 function store_user_input() {
     try {
         $.post('/upload.php', {
-            
+            "stage": "record",
+            "study": sessionStorage.getItem("Study"),
+            "agentGender": sessionStorage.getItem("agentGender"),
+            "convScript": sessionStorage.getItem("convScript")
         })
     }
     catch(err) {
+        alert(err);
     }
 
 }
