@@ -181,13 +181,16 @@ function chose_opt(ele) {
     if (ele.innerHTML.includes("input")) {
         $(ele).attr("disabled", "disabled");
         $(ele.children[1]).on("click",function(){
-            $("#options").remove();  //TODO: doesnt work
-            $('html, body').animate({scrollTop:$(document).height()}, 'slow');
-            chosen_options.push($(ele.children[0]).val());
-            right_chat_box= create_chat_box("right", $(ele.children[0]).val());
-            add_text(right_chat_box.box, right_chat_box.text);
-
-            oneConvRound(convRoundCount);
+            if ($(ele.children[0]).val()){
+                $("#options").remove();  //TODO: doesnt work
+                $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+                chosen_options.push($(ele.children[0]).val());
+                right_chat_box= create_chat_box("right", $(ele.children[0]).val());
+                add_text(right_chat_box.box, right_chat_box.text);
+    
+                oneConvRound(convRoundCount);
+            }
+            
         });
     }
     else {
