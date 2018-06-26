@@ -70,7 +70,7 @@
         ],
         [
             ["How many rooms are you looking for?"],
-            ["More than 5", "2", "3", "4", "5",]
+            ["More than 5", "5", "4", "3", "2"]
         ],
         [
             ["How many properties do you own in Singapore?"],
