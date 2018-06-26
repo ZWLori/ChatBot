@@ -2,10 +2,10 @@
 var online_version = false;
 var container = $("#chatContainer");
 var chosen_options = [];
-var roboName = "";
 var roboScriptLst = [];
 var responseOptsLst = [];
 var convRoundCount = 0;
+var userResponses = {"bank-savings":[], "home-loan":[], "life-insurance":[]};
 
 
 $.ajaxSetup({
@@ -211,10 +211,14 @@ function timeout (ms) {
 function store_user_input() {
     try {
         $.post('/upload.php', {
-            
+            "stage": "record",
+            "study": sessionStorage.getItem("Study"),
+            "agentGender": sessionStorage.getItem("agentGender"),
+            "convScript": sessionStorage.getItem("convScript")
         })
     }
     catch(err) {
+        alert(err);
     }
 
 }
