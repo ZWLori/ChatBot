@@ -6,7 +6,8 @@ var roboScriptLst = [];
 var responseOptsLst = [];
 var convRoundCount = 0;
 var userResponses = {};
-
+var script = sessionStorage.getItem("convScript");
+var gender = sessionStorage.getItem("agentGender");
 
 $.ajaxSetup({
     async: false
@@ -14,9 +15,16 @@ $.ajaxSetup({
 
 var file = get_script_file();
 var commonScripts;
+
+
 $.getJSON(file, function(data){
     commonScripts = data["scripts"]
-    console.log(commonScripts[0][1])
+    if (gender == "W")
+        name = "Michelle"
+    else if (gender == "M")
+        name = "Michael"    
+    commonScripts[0][0][0] = commonScripts[0][0][0].replace("NAME", name);
+
     $.each(commonScripts, function (infoIndex, info){
         roboScriptLst.push(info[0]);
         responseOptsLst.push(info[1]);
@@ -25,25 +33,23 @@ $.getJSON(file, function(data){
 });
     
 function get_script_file() {
-    script = sessionStorage.getItem("convScript");
-    gender = sessionStorage.getItem("agentGender");
-    if (gender == "W")
+    if (gender == "W"){
         $("#agent-image").attr("src", "../images/avatar/female.png");
-    else if (gender == "M")
-        $("#agent-image").attr("src", "../images/avatar/male.png");
-    // change the avatar based on requirements
-    if (script == 'N'){
-        $(".user-description").prepend("<h3 style='margin-top: 20px;'>Zan</h3>");
-        file = "../scripts/neutral.json"
-    }
-    else if (script == 'W'){
         $(".user-description").prepend("<h3 style='margin-top: 20px;'>Michelle</h3>");
-        file = "../scripts/woman.json"
-    }
-    else if (script == "M"){
+    } 
+    else if (gender == "M"){
+        $("#agent-image").attr("src", "../images/avatar/male.png");
         $(".user-description").prepend("<h3 style='margin-top: 20px;'>Michael</h3>");
-        file = "../scripts/man.json"
     }
+    
+    // change the avatar based on requirements
+    if (script == 'N')
+        file = "../scripts/neutral.json";
+    else if (script == 'W')
+        file = "../scripts/woman.json";
+    else if (script == "M")
+        file = "../scripts/man.json";
+    
     return file;
 }
 
