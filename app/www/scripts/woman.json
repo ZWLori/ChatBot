@@ -51,7 +51,10 @@
         ],
         [
             ["Great, thanks for completing the survey! ☺ Now, let me move on to our next task. Shall I help you find a suitable home loan plan?"],
-            ["Sure! I am interested to see what home loan plan is good for me."]
+            [
+                "Sure! I am interested to see what home loan plan is good for me.", 
+                "Great! I would love to find out more about home loan plans."
+            ]
         ],
         [
             [
