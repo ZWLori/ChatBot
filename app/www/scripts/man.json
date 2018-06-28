@@ -139,6 +139,10 @@
         [
             ["Please enter verification code"],
             ["<input type='number' name='verification222' min='0' placeholder='Enter verification code'><input type='submit' value='ok'>"]            
+        ],
+        [
+            ["All right, we finally finished our business. Please click the 'Next' button to complete a final survey evaluating your overall experience. Catch you next time."],
+            ["Next"]
         ]
     ]
 }

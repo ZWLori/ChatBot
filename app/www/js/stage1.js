@@ -15,10 +15,13 @@ $.ajaxSetup({
 
 var file = get_script_file();
 var commonScripts;
+var neutralEndingScripts;
 
 
 $.getJSON(file, function(data){
-    commonScripts = data["scripts"]
+    commonScripts = data["scripts"];
+    if (file.includes("neutral"))
+        neutralEndingScripts = data["end"];
     if (gender == "W")
         name = "Michelle"
     else if (gender == "M")
@@ -135,19 +138,19 @@ function chose_opt(ele) {
         // store the chosen options
         return;
     }
-    if (file.includes("neutral")) {
-        if (ele.innerHTML == "Next") {
-            // TODO change to required website
-            var win = window.open('http://stackoverflow.com/', '_blank');
-            if (win) {
-                //Browser has allowed it to be opened
-                win.focus();
-            } else {
-                //Browser has blocked it
-                alert('Please allow popups for this website');
-            }
+
+    if (ele.innerHTML == "Next") {
+        // TODO change to required website
+        var win = window.open('http://stackoverflow.com/', '_blank');
+        if (win) {
+            //Browser has allowed it to be opened
+            win.focus();
+        } else {
+            //Browser has blocked it
+            alert('Please allow popups for this website');
         }
-        else {
+    }
+    if (file.includes("neutral")) {
             if (ele.innerHTML.includes("bank savings")){
                 userResponses["bank-savings"] = [];
                 index = commonScripts[0][1].indexOf(ele.innerText);
@@ -155,6 +158,10 @@ function chose_opt(ele) {
                 console.log(commonScripts);
                 $.getJSON(file, function(data){
                     selectChoice = data["bank-savings"];
+                })
+                $.each(selectChoice,function (infoIndex, info){
+                    roboScriptLst.push(info[0]);
+                    responseOptsLst.push(info[1]);
                 })
             }
             else if (ele.innerHTML.includes("life insurance")){
@@ -165,6 +172,10 @@ function chose_opt(ele) {
                 $.getJSON(file, function(data){
                     selectChoice = data["life-insurance"]
                 })
+                $.each(selectChoice,function (infoIndex, info){
+                    roboScriptLst.push(info[0]);
+                    responseOptsLst.push(info[1]);
+                })
             }
             else if (ele.innerHTML.includes("home loan")){
                 userResponses["home-loan"] = []
@@ -174,12 +185,13 @@ function chose_opt(ele) {
                 $.getJSON(file, function(data){
                     selectChoice = data["home-loan"]
                 })
+                $.each(selectChoice,function (infoIndex, info){
+                    roboScriptLst.push(info[0]);
+                    responseOptsLst.push(info[1]);
+                })
             } 
-            $.each(selectChoice,function (infoIndex, info){
-                roboScriptLst.push(info[0]);
-                responseOptsLst.push(info[1]);
-            })
-        }
+            
+        
     }
    
     
@@ -197,17 +209,22 @@ function chose_opt(ele) {
                         alert("Please enter valid code!");
                         return;
                     }
-                    else{
+                    else if (file.includes("neutral")){
                         if (Object.keys(userResponses).length < 3){
                             $(ele).attr("disabled", "disabled");
                             roboScriptLst.length = 0;
                             responseOptsLst.length = 0;
-                            console.log(commonScripts);
                             $.each(commonScripts, function (infoIndex, info){
                                 roboScriptLst.push(info[0]);
                                 responseOptsLst.push(info[1]);
                             })
                             convRoundCount = 0;
+                        }
+                        else {
+                            $.each(neutralEndingScripts, function (infoIndex, info){
+                                roboScriptLst.push(info[0]);
+                                responseOptsLst.push(info[1]);
+                            })
                         }
                     }
                 }
