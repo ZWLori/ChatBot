@@ -138,6 +138,7 @@ function chose_opt(ele) {
     if (file.includes("neutral")) {
         if (ele.innerHTML == "Next") {
             if (Object.keys(userResponses).length < 3){
+                $(ele).attr("disabled", "disabled");
                 roboScriptLst.length = 0;
                 responseOptsLst.length = 0;
                 console.log(commonScripts);
@@ -188,6 +189,7 @@ function chose_opt(ele) {
         $(ele).attr("disabled", "disabled");
         $(ele.children[1]).on("click",function(){
             if ($(ele.children[0]).val()){
+                $(ele).children().attr("disabled", "disabled");
                 $("#options").remove();  //TODO: doesnt work
                 $('html, body').animate({scrollTop:$(document).height()}, 'slow');
                 chosen_options.push($(ele.children[0]).val());
@@ -200,6 +202,8 @@ function chose_opt(ele) {
         });
     }
     else {
+        $(ele).attr("disabled", "disabled");
+        $(ele).siblings().attr("disabled", "disabled");
         console.log("enter else");
         $("#options").remove();  //TODO: doesnt work
         $('html, body').animate({scrollTop:$(document).height()}, 'slow');
