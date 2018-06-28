@@ -185,6 +185,10 @@ function chose_opt(ele) {
     
     if (ele.innerHTML.includes("input")) {
         $(ele.children[1]).off().click(function(){
+            if ($(ele.children[0]).val()[0]=="-"){
+                alert("Please enter positive number");
+                return;
+            }
             if ($(ele.children[0]).val()){
                 // do validation on the code
                 if($(ele.children[0]).attr("name").includes("verification")){
