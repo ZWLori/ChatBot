@@ -22,7 +22,7 @@
         ],
         [
             ["How old are you?"],
-            ["<input type='number' name='age' placeholder='Enter number'><input type='submit' value='ok'>"]
+            ["<input type='number' name='age' min='0' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
             ["What is your occupation?"],
@@ -30,15 +30,15 @@
         ],
         [
             ["What is your monthly income/allowance (SGD)?"],
-            ["<input type='number' name='income' placeholder='Enter number'><input type='submit' value='ok'>"]
+            ["<input type='number' name='income' min='0' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
             ["What is your estimated net worth (SGD)?"],
-            ["<input type='number' name='net-worth' placeholder='Enter number'><input type='submit' value='ok'>"]
+            ["<input type='number' name='net-worth' min='0' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
             ["What is your estimated monthly expenditure (SGD)?"],
-            ["<input type='number' name='expenditure' placeholder='Enter number'><input type='submit' value='ok'>"]
+            ["<input type='number' name='expenditure' min='0' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
             [
@@ -48,6 +48,10 @@
                 "Now that I’ve found a plan for you, please click 'Next' to answer several questions about your experience while finding an appropriate bank account."
             ],
             ["Next"]
+        ],
+        [
+            ["Please enter verification code"],
+            ["<input type='number' name='verification111' min='0' placeholder='Enter verification code'><input type='submit' value='ok'>"]            
         ],
         [
             ["Thanks for completing the survey. On to the next task: finding a suitable home loan plan."],
@@ -74,11 +78,11 @@
         ],
         [
             ["How many properties do you own in Singapore?"],
-            ["<input type='number' name='expenditure' placeholder='Enter number'><input type='submit' value='ok'>"]
+            ["<input type='number' name='expenditure' min='0' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
             ["What is the combined annual income of the owners of this new propoerty that you are thinking of buying?"],
-            ["<input type='number' name='expenditure' placeholder='Enter number'><input type='submit' value='ok'>"]
+            ["<input type='number' name='expenditure' min='0' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
             [
@@ -87,6 +91,10 @@
                 "Now that I’ve found a plan for you, please click 'Next' to answer several questions about your experience while finding an appropriate home loan plan."
             ],
             ["Next"]
+        ],
+        [
+            ["Please enter verification code"],
+            ["<input type='number' name='verification333' min='0' placeholder='Enter verification code'><input type='submit' value='ok'>"]            
         ],
         [
             ["Thanks for completing the survey. Let’s move on to the next task: finding a suitable life insurance policy."],
@@ -106,7 +114,7 @@
         ],
         [
             ["What is your age?"],
-            ["<input type='number' name='expenditure' placeholder='Enter number'><input type='submit' value='ok'>"]
+            ["<input type='number' name='expenditure' min='0' placeholder='Enter number'><input type='submit' value='ok'>"]
         ],
         [
             ["Do you smoke?"],
@@ -127,6 +135,10 @@
                 "Now that I’ve found a plan for you, please click 'Next' to answer several questions about your experience while finding an appropriate life insurance plan."
             ],
             ["Next"]
+        ],
+        [
+            ["Please enter verification code"],
+            ["<input type='number' name='verification222' min='0' placeholder='Enter verification code'><input type='submit' value='ok'>"]            
         ]
     ]
 }

@@ -137,16 +137,14 @@ function chose_opt(ele) {
     }
     if (file.includes("neutral")) {
         if (ele.innerHTML == "Next") {
-            if (Object.keys(userResponses).length < 3){
-                $(ele).attr("disabled", "disabled");
-                roboScriptLst.length = 0;
-                responseOptsLst.length = 0;
-                console.log(commonScripts);
-                $.each(commonScripts, function (infoIndex, info){
-                    roboScriptLst.push(info[0]);
-                    responseOptsLst.push(info[1]);
-                })
-                convRoundCount = 0;
+            // TODO change to required website
+            var win = window.open('http://stackoverflow.com/', '_blank');
+            if (win) {
+                //Browser has allowed it to be opened
+                win.focus();
+            } else {
+                //Browser has blocked it
+                alert('Please allow popups for this website');
             }
         }
         else {
@@ -186,9 +184,32 @@ function chose_opt(ele) {
    
     
     if (ele.innerHTML.includes("input")) {
-        $(ele).attr("disabled", "disabled");
-        $(ele.children[1]).on("click",function(){
+        $(ele.children[1]).off().click(function(){
             if ($(ele.children[0]).val()){
+                // do validation on the code
+                if($(ele.children[0]).attr("name").includes("verification")){
+                    vCode = $(ele.children[0]).attr("name").replace("verification", "");
+                    if(vCode != $(ele.children[0]).val()){
+                        alert("Please enter valid code!");
+                        return;
+                    }
+                    else{
+                        if (Object.keys(userResponses).length < 3){
+                            $(ele).attr("disabled", "disabled");
+                            roboScriptLst.length = 0;
+                            responseOptsLst.length = 0;
+                            console.log(commonScripts);
+                            $.each(commonScripts, function (infoIndex, info){
+                                roboScriptLst.push(info[0]);
+                                responseOptsLst.push(info[1]);
+                            })
+                            convRoundCount = 0;
+                        }
+                    }
+                }
+
+
+                $(ele).attr("disabled", "disabled");
                 $(ele).children().attr("disabled", "disabled");
                 $("#options").remove();  //TODO: doesnt work
                 $('html, body').animate({scrollTop:$(document).height()}, 'slow');
