@@ -8,6 +8,8 @@ var convRoundCount = 0;
 var userResponses = {};
 var script = sessionStorage.getItem("convScript");
 var gender = sessionStorage.getItem("agentGender");
+console.log(script);
+console.log(gender);
 
 $.ajaxSetup({
     async: false
@@ -25,7 +27,9 @@ $.getJSON(file, function(data){
     if (gender == "W")
         name = "Michelle"
     else if (gender == "M")
-        name = "Michael"    
+        name = "Michael"  
+    else
+        name = "Zan"  
     commonScripts[0][0][0] = commonScripts[0][0][0].replace("NAME", name);
 
     $.each(commonScripts, function (infoIndex, info){
