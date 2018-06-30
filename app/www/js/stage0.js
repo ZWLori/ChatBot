@@ -1,10 +1,23 @@
 
 function get_attrs() {
-    agent_gender = $("#agent-gender").val();
-    if (sessionStorage.getItem("study") == 2)
-        conv_script = $("#conv-script").val();
-    else
-        conv_script = "N";
+    if (sessionStorage.getItem("study") == 1){
+        agent_gender = $("#agent-gender").val();
+        conv_script = "N"; 
+    }
+    else if (sessionStorage.getItem("study") == 2){
+        agent_gender = $("#agent-gender").val();    
+        conv_script = $("#conv-script").val();    
+    }
+    else {
+        // used for pilot study
+        agent_gender = "N";
+        randNum = Math.floor(Math.random() * 3);
+        switch(randNum){
+            case 0: conv_script = "N"; break;
+            case 1: conv_script = "M"; break;
+            case 2: conv_script = "W"; break;
+        }
+    }
 
     // store the info
     sessionStorage.setItem("agentGender", agent_gender);
@@ -29,6 +42,11 @@ function selection2()
 
 }
 
+function selection3(){
+    sessionStorage.setItem("study", 3);
+    goNext();
+}
+
 function goBack()
 {
     $("#selectStudy").css("display","block");
@@ -37,6 +55,6 @@ function goBack()
 }
 
 function goNext() {
-    get_attrs()
+    get_attrs();
     document.location.href = './stage1.html';
 }

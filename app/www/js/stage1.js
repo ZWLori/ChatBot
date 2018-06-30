@@ -8,6 +8,8 @@ var convRoundCount = 0;
 var userResponses = {};
 var script = sessionStorage.getItem("convScript");
 var gender = sessionStorage.getItem("agentGender");
+console.log(script);
+console.log(gender);
 
 $.ajaxSetup({
     async: false
@@ -25,7 +27,9 @@ $.getJSON(file, function(data){
     if (gender == "W")
         name = "Michelle"
     else if (gender == "M")
-        name = "Michael"    
+        name = "Michael"  
+    else
+        name = "Zan"  
     commonScripts[0][0][0] = commonScripts[0][0][0].replace("NAME", name);
 
     $.each(commonScripts, function (infoIndex, info){
@@ -37,21 +41,21 @@ $.getJSON(file, function(data){
     
 function get_script_file() {
     if (gender == "W"){
-        $("#agent-image").attr("src", "../images/avatar/female.png");
+        $("#agent-image").attr("src", "./images/avatar/female.png");
         $(".user-description").prepend("<h3 style='margin-top: 20px;'>Michelle</h3>");
     } 
     else if (gender == "M"){
-        $("#agent-image").attr("src", "../images/avatar/male.png");
+        $("#agent-image").attr("src", "./images/avatar/male.png");
         $(".user-description").prepend("<h3 style='margin-top: 20px;'>Michael</h3>");
     }
     
     // change the avatar based on requirements
     if (script == 'N')
-        file = "../scripts/neutral.json";
+        file = "./scripts/neutral.json";
     else if (script == 'W')
-        file = "../scripts/woman.json";
+        file = "./scripts/woman.json";
     else if (script == "M")
-        file = "../scripts/man.json";
+        file = "./scripts/man.json";
     
     return file;
 }
