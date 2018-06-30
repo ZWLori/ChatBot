@@ -16,7 +16,7 @@
 
     /*height: calc(100vh - 200px);*/
     padding: 3rem 2rem;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .chat-content {
