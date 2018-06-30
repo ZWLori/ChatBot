@@ -297,3 +297,20 @@ function store_user_input() {
 
 }
 
+function submitSurvey() {
+
+    var surveyP1 = document.getElementById("surveyP1");
+    var surveyP2 = document.getElementById("surveyP2");
+
+    if (surveyP1.style.display === "none") {
+        surveyP1.style.display = "block";
+    } else {
+        surveyP1.style.display = "none";
+        surveyP2.style.display = "block";
+    }
+
+    if (surveyP2.style.display === "block") {
+            // upload user's input
+     //   document.location.href = '';
+    }
+}
