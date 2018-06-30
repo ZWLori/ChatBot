@@ -56,8 +56,16 @@ function goBack()
 
 function goBack2()
 {
-    $("#selection-container").css("display","block");
-    $("#matric-container").css("display", "none");
+    if (sessionStorage.getItem("study") == 3){
+
+        $("#selectStudy").css("display", "block");
+        $("#matric-container").css("display", "none");
+    }
+    else {
+        $("#selection-container").css("display","block");
+        $("#matric-container").css("display", "none");
+    }
+
 
 }
 
