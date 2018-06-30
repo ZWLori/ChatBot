@@ -45,6 +45,7 @@
     overflow: hidden;
     pointer-events: none;
     padding: 3rem 0rem;
+    z-index: 100;
 
     /*z-index: 100;*/
 }
