@@ -44,8 +44,8 @@
     /*top: 0;*/
     overflow: hidden;
     pointer-events: none;
-    padding: 3rem 0rem;
-    z-index: 100;
+    padding: 4rem 0rem;
+   max-height: 800px;
 
     /*z-index: 100;*/
 }
@@ -319,11 +319,31 @@ msg-row {
 
 /* For Introduction.html */
 
+.intro-avatar {
+    width: 220px;
+    margin-left: 55px;
+
+}
+
+
 .intro-box {
 	height:100%;
 	margin: 80px 50px 0 0;
+    overflow: hidden;
 }
 
+@media only screen and (max-width: 600px) {
+    .intro-avatar {
+        padding-top: 450px;
+    }
+
+    .intro-box {
+        height:100%;
+        margin: -100px 20px 20px 20px;
+        overflow: hidden;
+    }
+
+}
 .intro-box h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 55px; font-weight: bold; letter-spacing: 0px; line-height: 1; text-align: center; }
 
 .intro-box h2 { color: #000; font-family: 'Open Sans', sans-serif; font-size: 28px; line-height: 30px; margin: 0 0 30px; text-align: center; letter-spacing:1px;}
