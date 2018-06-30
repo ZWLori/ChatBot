@@ -145,7 +145,7 @@ function chose_opt(ele) {
 
     if (ele.innerHTML == "Next") {
         // TODO change to required website
-        var win = window.open('http://stackoverflow.com/', '_blank');
+        var win = window.open('survey.html', '_blank');
         if (win) {
             //Browser has allowed it to be opened
             win.focus();

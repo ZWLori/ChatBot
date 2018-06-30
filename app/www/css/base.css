@@ -40,8 +40,11 @@ nav{
 /*}*/
 
 .avatar-img{
-    border-radius: 50%;
-    width: 80%;
+    max-width: 70%;
+    height: auto;
+    width: auto\9; /* ie8 */
+    margin-left: 65px;
+    margin-top: -10px;
 }
 
 .page-content{
