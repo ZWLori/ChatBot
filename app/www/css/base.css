@@ -40,11 +40,10 @@ nav{
 /*}*/
 
 .avatar-img{
-    max-width: 70%;
+    max-width: 90%;
     height: auto;
     width: auto\9; /* ie8 */
-    margin-left: 65px;
-    margin-top: -10px;
+    margin-top: -40px;
 }
 
 .page-content{

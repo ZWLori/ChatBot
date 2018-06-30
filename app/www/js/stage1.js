@@ -41,11 +41,11 @@ $.getJSON(file, function(data){
     
 function get_script_file() {
     if (gender == "W"){
-        $("#agent-image").attr("src", "./images/avatar/female.png");
+        $("#agent-image").attr("src", "./images/avatar/avatar-woman.png");
         $(".user-description").prepend("<h3 style='margin-top: 20px;'>Michelle</h3>");
     } 
     else if (gender == "M"){
-        $("#agent-image").attr("src", "./images/avatar/male.png");
+        $("#agent-image").attr("src", "./images/avatar/avatar-man.png");
         $(".user-description").prepend("<h3 style='margin-top: 20px;'>Michael</h3>");
     }
     
