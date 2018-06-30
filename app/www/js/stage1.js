@@ -273,7 +273,7 @@ function nextRound(ele){
 }
 
 async function simulate_delay(box) {
-    await timeout(1000);
+    await timeout(2500);
    remove_wait_animation(box.box);
    // add_text(box.box, box.text);
 }

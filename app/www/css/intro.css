@@ -123,11 +123,13 @@ msg-row {
     border-radius: 20px;
     -webkit-box-shadow: 5px 5px 15px 0 rgba(102, 102, 102, 0.1);
     box-shadow: 5px 5px 15px 0 rgba(102, 102, 102, 0.1);
-    -webkit-transition: width .12s ease-out, height .12s ease-out;
-    transition: width .12s ease-out, height .12s ease-out;
+    -webkit-transition: width 2s ease-out, height 2s ease-out;
+    transition: width 2s ease-out, height 2s ease-out;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 }
+
+
 
 .msg .dot {
     position: relative;
@@ -140,8 +142,8 @@ msg-row {
     -webkit-transform-origin: 50% 50%;
     -ms-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
-    -webkit-animation: dotZoomIn 1.4s infinite;
-    animation: dotZoomIn 1.4s infinite;
+    -webkit-animation: dotZoomIn 3s infinite;
+    animation: dotZoomIn 3s infinite;
 }
 
 .msg .dot:first-child {
@@ -162,7 +164,7 @@ msg-row {
     -webkit-transform-origin: 0 0;
     -ms-transform-origin: 0 0;
     transform-origin: 0 0;
-    -webkit-animation: msgBounceIn .4s;
+    -webkit-animation: msgBounceIn .8s;
     /* animation: msgBounceIn .4s;
      */
 }
@@ -171,8 +173,8 @@ msg-row {
     -webkit-transform-origin: 100% 100%;
     -ms-transform-origin: 100% 100%;
     transform-origin: 100% 100%;
-    -webkit-animation: msgBounceIn .4s;
-    animation: msgBounceIn .4s;
+    -webkit-animation: msgBounceIn 1s;
+    animation: msgBounceIn 1s;
 }
 
 @media (max-width: 480px) {
