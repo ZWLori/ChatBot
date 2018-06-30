@@ -56,5 +56,7 @@ function goBack()
 
 function goNext() {
     get_attrs();
-    document.location.href = './stage1.html';
+
+    document.location.href = './index.html';
+
 }
