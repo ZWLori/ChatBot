@@ -54,9 +54,23 @@ function goBack()
 
 }
 
-function goNext() {
-    get_attrs();
+function goBack2()
+{
+    $("#selection-container").css("display","block");
+    $("#matric-container").css("display", "none");
 
+}
+
+function goNext() {
+    $("#matric-container").css("display","block");
+    $("#selection-container").css("display", "none");
+
+}
+
+
+function submitInput() {
+
+    get_attrs();
     document.location.href = './index.html';
 
 }
