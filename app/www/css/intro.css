@@ -320,8 +320,8 @@ msg-row {
 /* For Introduction.html */
 
 .intro-avatar {
-    width: 220px;
-    margin-left: 55px;
+    width: 200px;
+    margin-left: 45px;
 
 }
 
@@ -331,6 +331,8 @@ msg-row {
 	margin: 80px 50px 0 0;
     overflow: hidden;
 }
+
+
 
 @media only screen and (max-width: 600px) {
     .intro-avatar {

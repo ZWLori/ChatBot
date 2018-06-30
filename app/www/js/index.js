@@ -62,9 +62,10 @@ function goBack2()
 }
 
 function goNext() {
+
     $("#matric-container").css("display","block");
     $("#selection-container").css("display", "none");
-
+    $("#selectStudy").css("display","none");
 }
 
 
