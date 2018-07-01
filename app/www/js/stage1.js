@@ -8,8 +8,7 @@ var convRoundCount = 0;
 var userResponses = {};
 var script = sessionStorage.getItem("convScript");
 var gender = sessionStorage.getItem("agentGender");
-console.log(script);
-console.log(gender);
+var whichNext = 0;
 
 $.ajaxSetup({
     async: false
@@ -144,8 +143,16 @@ function chose_opt(ele) {
     }
 
     if (ele.innerHTML == "Next") {
-        // TODO change to required website
-        var win = window.open('survey.html', '_blank');
+        if (file.includes("neutral")){
+            whichNext += 1;
+            switch(whichNext){
+                case 1: sessionStorage.setItem("taskName", "bank savings account"); break;
+                case 2: sessionStorage.setItem("taskName", "home loan plan"); break;
+                case 3: sessionStorage.setItem("taskName", "life insurance policy"); break;
+                default: break;
+            }
+        }
+        win = window.open('survey.html', '_blank');
         if (win) {
             //Browser has allowed it to be opened
             win.focus();
@@ -156,6 +163,7 @@ function chose_opt(ele) {
     }
     if (file.includes("neutral")) {
             if (ele.innerHTML.includes("bank savings")){
+                sessionStorage.setItem("taskName", "bank savings account");
                 userResponses["bank-savings"] = [];
                 index = commonScripts[0][1].indexOf(ele.innerText);
                 commonScripts[0][1].splice(index,1);
@@ -169,6 +177,7 @@ function chose_opt(ele) {
                 })
             }
             else if (ele.innerHTML.includes("life insurance")){
+                sessionStorage.setItem("taskName", "life insurance policy");
                 userResponses["life-insurance"] = [];
                 index = commonScripts[0][1].indexOf(ele.innerText);
                 commonScripts[0][1].splice(index,1);
@@ -182,6 +191,7 @@ function chose_opt(ele) {
                 })
             }
             else if (ele.innerHTML.includes("home loan")){
+                sessionStorage.setItem("taskName", "home loan plan")
                 userResponses["home-loan"] = []
                 index = commonScripts[0][1].indexOf(ele.innerText);
                 commonScripts[0][1].splice(index,1);
@@ -250,7 +260,6 @@ function chose_opt(ele) {
     else {
         $(ele).attr("disabled", "disabled");
         $(ele).siblings().attr("disabled", "disabled");
-        console.log("enter else");
         $("#options").remove();  //TODO: doesnt work
         $('html, body').animate({scrollTop:$(document).height()}, 'slow');
         chosen_options.push(ele.innerText);
