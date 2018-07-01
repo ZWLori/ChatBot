@@ -78,8 +78,8 @@ function goNext() {
 
 
 function submitInput() {
-
-    get_attrs();
-    document.location.href = './stage0.html';
-
+    if($("#matricNum").val() != ''){
+        get_attrs();
+        document.location.href = './stage0.html';
+    }
 }
