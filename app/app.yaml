@@ -21,6 +21,10 @@ handlers:
   static_files: www/stage1.html
   upload: www/stage1.html  
 
+- url: /survey.html
+  static_files: www/survey.html
+  upload: www/survey.html
+
 - url: /js
   static_dir: www/js
 
