@@ -317,7 +317,8 @@ function submitSurvey() {
     }
 
     if (surveyP2.style.display === "block") {
-            // upload user's input
+        // upload user's input
+        store_user_input();
      //   document.location.href = '';
     }
 }
