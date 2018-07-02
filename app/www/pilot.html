@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/intro.css">
+
+
+    <title>Pilot Study</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-light fixed-top">
+    <img src="./images/rbkbank-logo.png" width="140">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+
+
+    </div>
+</nav>
+
+<main class="container-fluid">
+
+    <div class="row page-content page-background justify-content-center">
+        <div class="col-sm-12 col-lg-8 col-md-10">
+            <div id="selectStudy" style="margin: 40px auto;">
+                <div  class="form-group"><center>
+                    <label><b>Please select study:</b></label> <p>
+
+
+                    <button type="button" class="btn button1" id="study3" onclick="selection3()">Pilot Study</button><p>
+
+                </center></div>
+
+            </div>
+            <div id="matric-container" style="margin: 40px auto; display: none;">
+                <div  class="form-group " ><center>
+                    <div class="col-sm-6">  <label><b>Please enter your matric number:</b> <br>
+                        (use lower case, for example: g1234567a) </label>
+                        <p></p>
+                        <input type="text" id="matricNum" class="form-control" >
+                    </div><p>
+                </div><button  id="backBtn" class="btn btn-default btn-left" onclick="goBack2()">Back</button>
+                <button  class="btn btn-default btn-right" onclick="submitInput()">Next</button>
+
+            </div>
+            <!-- <div id="selection-container" style="margin: 40px auto; display: none;">
+                <div  class="form-group" ><center>
+                    <label><b>Please select the following</b></label> <p>
+                    <label>Agent Gender:</label><select class="form-control col-3">
+                        <option>Male</option>
+                        <option>Female</option>
+
+                </select>
+                </center></div> <br>
+                <button  class="btn btn-default btn-left" onclick="goBack()">Back</button>
+                <button  class="btn btn-default btn-right" onclick="goNext()">Next</button>
+
+            </div> -->
+
+            <div id="selection-container" style="margin: 40px auto; display: none">
+                <div  class="form-group" ><center>
+                    <label><b>Please select the following</b></label> <p>
+                    <label>A:</label><select id ="agent-gender" class="form-control col-3">
+                    <option>M</option>
+                    <option>W</option>
+
+                </select>
+                    <div id="cs" style="display: none;">
+                    <p>
+                        <label>CS:</label><select id="conv-script" class="form-control col-3">
+                        <option>M</option>
+                        <option>W</option>
+                    </select>
+                </div>
+                </center></div> <br>
+
+            <button  class="btn btn-default btn-right" onclick="goNext()">Next</button>
+
+        </div>
+
+    </div>
+    </div>
+
+
+</main>
+
+<script src="./js/index.js"></script>
+</body>
