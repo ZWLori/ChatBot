@@ -45,7 +45,12 @@ function get_script_file() {
         $("#agent-image").attr("src", "./images/avatar/avatar-man.png");
         $(".user-description").prepend("<h3 style='margin-top: 20px;'>Michael</h3>");
     }
-    
+
+    else {
+
+        $(".user-description").prepend("<h1 style='font-size: 60px; margin-top: -20px;'>Zan</h1>");
+    }
+
     // change the avatar based on requirements
     if (script == 'N')
         file = "./scripts/neutral.json";
