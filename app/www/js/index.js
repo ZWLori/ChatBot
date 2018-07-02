@@ -1,3 +1,11 @@
+// False: lab experiment; True: online version
+var online_version = false;
+
+if (online_version){
+    selection3();
+    $("#backBtn").css("display", "none");
+}
+
 
 function get_attrs() {
     if (sessionStorage.getItem("study") == 1){

@@ -1,5 +1,3 @@
-// False: lab experiment; True: online version
-var online_version = false;
 var container = $("#chatContainer");
 var chosen_options = [];
 var roboScriptLst = [];
