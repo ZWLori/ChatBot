@@ -298,7 +298,8 @@ function store_user_input() {
     try {
         $.post('/upload.php', {
             "stage": "record",
-            "study": sessionStorage.getItem("Study"),
+            "study": sessionStorage.getItem("study"),
+            "matricNum": sessionStorage.getItem("matricNum"),
             "agentGender": sessionStorage.getItem("agentGender"),
             "convScript": sessionStorage.getItem("convScript")
         })

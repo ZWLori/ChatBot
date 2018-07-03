@@ -1,5 +1,5 @@
 // False: lab experiment; True: online version
-var online_version = false;
+var online_version = true;
 
 if (online_version){
     selection3();
@@ -87,6 +87,7 @@ function goNext() {
 
 function submitInput() {
     if($("#matricNum").val() != ''){
+        sessionStorage.setItem("matricNum", $("#matricNum").val());
         get_attrs();
         document.location.href = './stage0.html';
     }
