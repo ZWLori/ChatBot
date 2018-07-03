@@ -1,10 +1,17 @@
 // False: lab experiment; True: online version
 var online_version = true;
 
-if (online_version){
-    selection3();
-    $("#backBtn").css("display", "none");
-}
+$(window).on('load', function () {
+    if (online_version) {
+        sessionStorage.setItem('online', online_version);
+        sessionStorage.setItem('matricNum', (Math.floor(Math.random()*900000) + 100000));
+        sessionStorage.setItem('study', 3);
+        get_attrs();
+        document.location.href = "./stage0.html";
+    }
+    else 
+        $('#attrForm').css('display', 'block');
+})
 
 
 function get_attrs() {
