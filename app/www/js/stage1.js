@@ -19,8 +19,6 @@ var neutralEndingScripts;
 
 $.getJSON(file, function(data){
     commonScripts = data["scripts"];
-    if (file.includes("neutral"))
-        neutralEndingScripts = data["end"];
     if (gender == "W")
         name = "Michelle"
     else if (gender == "M")
@@ -33,6 +31,10 @@ $.getJSON(file, function(data){
         roboScriptLst.push(info[0]);
         responseOptsLst.push(info[1]);
     })
+    if (file.includes("neutral"))
+        neutralEndingScripts = data["end"];
+    else
+        roboScriptLst[roboScriptLst.length-1][2] = roboScriptLst[roboScriptLst.length-1][2].replace("uniqueID", sessionStorage.getItem('matricNum'));
     oneConvRound(convRoundCount);
 });
     
@@ -139,13 +141,14 @@ function create_options(content_list) {
 
 // Response after user chosing an option
 function chose_opt(ele) {
-    if (ele.innerText == "I'm ready to proceed!") {
-        document.location.href = 'stage2.html';
-        // store the chosen options
-        return;
-    }
 
     if (ele.innerHTML == "Next") {
+        if (convRoundCount >= roboScriptLst.length)
+        {
+            // TODO insert the external hyper link here
+            document.location.href = "www/.../...";
+            return;
+        }
         if (file.includes("neutral")){
             whichNext += 1;
             switch(whichNext){
@@ -242,6 +245,7 @@ function chose_opt(ele) {
                                 roboScriptLst.push(info[0]);
                                 responseOptsLst.push(info[1]);
                             })
+                            roboScriptLst[roboScriptLst.length-1][2] = roboScriptLst[roboScriptLst.length-1][2].replace("uniqueID", sessionStorage.getItem('matricNum'));
                         }
                     }
                 }

@@ -1,5 +1,5 @@
 // False: lab experiment; True: online version
-var online_version = true;
+var online_version = false;
 
 $(window).on('load', function () {
     if (online_version) {

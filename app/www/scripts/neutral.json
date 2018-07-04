@@ -123,7 +123,12 @@
     "end":
     [
         [
-            ["Thank you. You have come to the end of the demo. Please click the ”Next” button to complete a final survey evaluating your overall experience."],
+            [
+                "Thank you.",
+                "You will now be redirected to a survey page to evaluate your experience during the demostration session.",
+                "Before you begin the survey, please copy your unique randomly-generated ID number. Your unique ID number is <b>uniqueID</b>",
+                "Please click 'Next' to access the survey"
+            ],
             ["Next"]
         ]
         
