@@ -135,8 +135,8 @@ msg-row {
     border-radius: 20px;
     -webkit-box-shadow: 5px 5px 15px 0 rgba(102, 102, 102, 0.1);
     box-shadow: 5px 5px 15px 0 rgba(102, 102, 102, 0.1);
-    -webkit-transition: width 2s ease-out, height 2s ease-out;
-    transition: width 2s ease-out, height 2s ease-out;
+    -webkit-transition: width 1s ease-out, height 1s ease-out;
+    transition: width 1s ease-out, height 1s ease-out;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 }
@@ -154,8 +154,8 @@ msg-row {
     -webkit-transform-origin: 50% 50%;
     -ms-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
-    -webkit-animation: dotZoomIn 3s infinite;
-    animation: dotZoomIn 3s infinite;
+    -webkit-animation: dotZoomIn 1.5s infinite;
+    animation: dotZoomIn 1.5s infinite;
 }
 
 .msg .dot:first-child {
@@ -176,7 +176,7 @@ msg-row {
     -webkit-transform-origin: 0 0;
     -ms-transform-origin: 0 0;
     transform-origin: 0 0;
-    -webkit-animation: msgBounceIn .8s;
+    -webkit-animation: msgBounceIn .6s;
     /* animation: msgBounceIn .4s;
      */
 }

@@ -121,7 +121,7 @@ function add_text(box, text) {
         box.style.fontFamily = "Helvetica Neue Light";
 
     }
-    
+
     else {
         box.style.fontFamily = "Helvetica Neue";
     }
@@ -335,6 +335,66 @@ function submitSurvey() {
     var surveyP1 = document.getElementById("surveyP1");
     var surveyP2 = document.getElementById("surveyP2");
 
+    var q1Checked = 0;
+    var q2Checked = 0;
+    var q3Checked = 0;
+    var q4Checked = 0;
+    var q5Checked = 0;
+    var q6Checked = 0;
+    var q7Checked = 0;
+
+    for ( var i = 0; i < document.getElementsByName('q1').length; i++) {
+        if(document.getElementsByName('q1')[i].checked) {
+            q1Checked = 1;
+            break;
+        }
+    }
+
+    for ( var i = 0; i < document.getElementsByName('q2').length; i++) {
+        if(document.getElementsByName('q2')[i].checked) {
+            q2Checked = 1;
+            break;
+        }
+    }
+
+    for ( var i = 0; i < document.getElementsByName('q3').length; i++) {
+        if(document.getElementsByName('q3')[i].checked) {
+            q3Checked = 1;
+            break;
+        }
+    }
+
+
+    for ( var i = 0; i < document.getElementsByName('q4').length; i++) {
+        if(document.getElementsByName('q4')[i].checked) {
+            q4Checked = 1;
+            break;
+        }
+    }
+
+    for ( var i = 0; i < document.getElementsByName('q5').length; i++) {
+        if(document.getElementsByName('q5')[i].checked) {
+            q5Checked = 1;
+            break;
+        }
+    }
+
+    for ( var i = 0; i < document.getElementsByName('q6').length; i++) {
+        if(document.getElementsByName('q6')[i].checked) {
+            q6Checked = 1;
+            break;
+        }
+    }
+
+    for ( var i = 0; i < document.getElementsByName('q7').length; i++) {
+        if(document.getElementsByName('q7')[i].checked) {
+            q7Checked = 1;
+            break;
+        }
+    }
+
+    if (q1Checked == 1 && q2Checked == 1 && q3Checked == 1 && q4Checked == 1 && q5Checked == 1 && q6Checked == 1 && q7Checked == 1){
+
     if (surveyP1.style.display === "none") {
         surveyP1.style.display = "block";
     } else {
@@ -346,5 +406,9 @@ function submitSurvey() {
         // upload user's input
         store_user_input();
      //   document.location.href = '';
+    }}
+
+    else {
+        alert("Please answer all questions.");
     }
 }
