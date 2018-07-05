@@ -144,7 +144,7 @@
             [
                 "All right, we finally finished our business.",
                 "You will now be redirected to a survey page to evaluate your experience during the demostration session.",
-                "Before you begin the survey, please copy your unique randomly-generated ID number. Your unique ID number is <b>uniqueID</b>",
+                "Before you begin the survey, please note to enter the matriculation number that you entered at the beginning of this session, <b>uniqueID</b>",
                 "Please click 'Next' to access the survey",
                 "Catch you next time."
             ],
