@@ -17,6 +17,10 @@ var commonScripts;
 var neutralEndingScripts;
 
 
+$(window).on('load', function () {
+
+})
+
 $.getJSON(file, function(data){
     commonScripts = data["scripts"];
     if (gender == "W")
@@ -109,6 +113,18 @@ function create_chat_box(side, content) {
 
 function add_text(box, text) {
     box.appendChild(text);
+    if (gender == "M"){
+        box.style.fontFamily = "EB Garamond";
+        box.style.fontWeight = "bold";
+    }
+    else if (gender == "W") {
+        box.style.fontFamily = "Helvetica Neue Light";
+
+    }
+    
+    else {
+        box.style.fontFamily = "Helvetica Neue";
+    }
 }
 
 function create_wait_animation(box) {
