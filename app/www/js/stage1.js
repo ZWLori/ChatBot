@@ -330,7 +330,7 @@ function store_user_input() {
 
 }
 
-function submitSurvey() {
+function submitSurveyP1() {
 
     var surveyP1 = document.getElementById("surveyP1");
     var surveyP2 = document.getElementById("surveyP2");
@@ -402,13 +402,38 @@ function submitSurvey() {
         surveyP2.style.display = "block";
     }
 
-    if (surveyP2.style.display === "block") {
-        // upload user's input
-        store_user_input();
-     //   document.location.href = '';
-    }}
+
+
+
+    }
 
     else {
         alert("Please answer all questions.");
     }
+}
+
+
+function submitSurveyP2() {
+
+        // upload user's input
+        var optionsChecked = 0;
+
+        for (var i = 0; i < document.getElementsByName('options').length; i++) {
+            if (document.getElementsByName('options')[i].checked) {
+                optionsChecked = 1;
+                break;
+            }
+        }
+
+        if (optionsChecked == 1) {
+            document.location.href = 'http://www.google.com.sg';
+            // store_user_input();
+        }
+        else {
+            alert("Please answer the question.");
+        }
+
+
+
+
 }
