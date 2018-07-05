@@ -426,7 +426,7 @@ function submitSurveyP2() {
         }
 
         if (optionsChecked == 1) {
-            document.location.href = 'http://www.google.com.sg';
+            document.location.href = './end.html';
             // store_user_input();
         }
         else {
