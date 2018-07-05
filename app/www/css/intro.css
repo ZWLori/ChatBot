@@ -313,6 +313,7 @@ msg-row {
 
 .msg-right .option {
     float: right;
+    font-family: 'Helvetica Neue';
 }
 
 .robo-img {
