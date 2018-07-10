@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=EB+Garamond|Roboto');
 @font-face {
     font-family: 'Helvetica Neue'; /*a name to be used later*/
-    src: url('./fonts/HelveticalNeue.ttf'); /*URL to font*/
+    src: url('../fonts/HelveticaNeue.ttf'); /*URL to font*/
 }
 
 @font-face {
     font-family: 'Helvetica Neue Light'; /*a name to be used later*/
-    src: url('./fonts/HelveticalNeue-Light.ttf'); /*URL to font*/
+    src: url('../fonts/HelveticaNeue-Light.otf'); /*URL to font*/
 }
 
 

@@ -26,9 +26,9 @@ $.getJSON(file, function(data){
     if (gender == "W")
         name = "Michelle"
     else if (gender == "M")
-        name = "Michael"  
+        name = "Michael"
     else
-        name = "Zan"  
+        name = "Zan"
     commonScripts[0][0][0] = commonScripts[0][0][0].replace("NAME", name);
 
     $.each(commonScripts, function (infoIndex, info){
@@ -41,12 +41,12 @@ $.getJSON(file, function(data){
         roboScriptLst[roboScriptLst.length-1][2] = roboScriptLst[roboScriptLst.length-1][2].replace("uniqueID", sessionStorage.getItem('matricNum'));
     oneConvRound(convRoundCount);
 });
-    
+
 function get_script_file() {
     if (gender == "W"){
         $("#agent-image").attr("src", "./images/avatar/avatar-woman.png");
         $(".user-description").prepend("<h3 style='margin-top: 20px;'>Michelle</h3>");
-    } 
+    }
     else if (gender == "M"){
         $("#agent-image").attr("src", "./images/avatar/avatar-man.png");
         $(".user-description").prepend("<h3 style='margin-top: 20px;'>Michael</h3>");
@@ -64,27 +64,32 @@ function get_script_file() {
         file = "./scripts/woman.json";
     else if (script == "M")
         file = "./scripts/man.json";
-    
+
     return file;
 }
 
-function oneConvRound(index){
+async function oneConvRound(index){
     if (convRoundCount >= roboScriptLst.length)
         return
     robo = roboScriptLst[index];
-    // create a box to holds the waiting dots
-    wait_box = create_chat_box("left", "");
-    // add the wait dots
-    create_wait_animation(wait_box.box);
-    // remove the wait dots after some time and then display all message
-    simulate_delay(wait_box).then(()=> {
-        for (i=0;i<robo.length;i++) {
-            box = create_chat_box("left", robo[i]);
-            add_text(box.box, box.text);
-        }
-        create_options(responseOptsLst[index]);
-        convRoundCount += 1;
-    });
+
+    for (var i = 0; i < robo.length; i++) {
+        // if (index != 0 || i != 0) { // add this condition to remove the first wait (and line 85)
+            // add delay before '...'
+            await timeout(200);
+            // create a box to holds the waiting dots
+            wait_box = create_chat_box("left", "");
+            // add the wait dots
+            create_wait_animation(wait_box.box);
+            // remove the wait dots after some time and then display all message
+            await simulate_delay(wait_box);
+        // }
+
+        box = create_chat_box("left", robo[i]);
+        add_text(box.box, box.text);
+    }
+    create_options(responseOptsLst[index]);
+    convRoundCount += 1;
 }
 
 //Create html chat box
@@ -225,12 +230,12 @@ function chose_opt(ele) {
                     roboScriptLst.push(info[0]);
                     responseOptsLst.push(info[1]);
                 })
-            } 
-            
-        
+            }
+
+
     }
-   
-    
+
+
     if (ele.innerHTML.includes("input")) {
         $(ele.children[1]).off().click(function(){
             if ($(ele.children[0]).val()[0]=="-"){
@@ -274,10 +279,10 @@ function chose_opt(ele) {
                 chosen_options.push($(ele.children[0]).val());
                 right_chat_box= create_chat_box("right", $(ele.children[0]).val());
                 add_text(right_chat_box.box, right_chat_box.text);
-    
+
                 oneConvRound(convRoundCount);
             }
-            
+
         });
     }
     else {
